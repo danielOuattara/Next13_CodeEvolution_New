@@ -5,7 +5,11 @@ export default function UsersList(props) {
       <h1>Users list</h1>
       <ul>
         {props.users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <li key={user.id}>
+            <p>
+              {user.name} - {user.email}
+            </p>
+          </li>
         ))}
       </ul>
     </>
