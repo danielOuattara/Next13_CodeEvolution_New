@@ -18,11 +18,13 @@ export default function PostsHomePage(props) {
 //--------------------------------------------------------
 
 export async function getStaticProps(context) {
+  // const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=5`);
+
   const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+
   const posts = await response.json();
 
   return {
-    // props: { posts: posts.slice(0, 3) },
     props: { posts },
   };
 }

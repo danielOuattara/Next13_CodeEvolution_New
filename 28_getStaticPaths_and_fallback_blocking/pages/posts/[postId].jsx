@@ -1,15 +1,12 @@
-import React from "react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 //-----------------
 export default function SinglePostDetails(props) {
-  // console.log("props = ", props);
-
-  const router = useRouter();
-  console.log("router = ", router);
-
-  if (router.isFallback) {
-    return <p>Loading...</p>;
-  }
+  /* NOT NECESSARY 
+  ------------------ */
+  // const router = useRouter();
+  // if (router.isFallback) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <article>
@@ -22,8 +19,6 @@ export default function SinglePostDetails(props) {
 
 //-----------------
 export async function getStaticProps(context) {
-  // log("context = ", context);
-
   const postId = context.params.postId;
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${postId}`,
@@ -48,11 +43,11 @@ export async function getStaticProps(context) {
 
 //-----------------
 export async function getStaticPaths() {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-  const posts = await response.json();
-  const postPaths = posts.map((post) => ({
-    params: { postId: `${post.id}` },
-  }));
+  // const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  // const posts = await response.json();
+  // const postPaths = posts.map((post) => ({
+  //   params: { postId: `${post.id}` },
+  // }));
 
   return {
     paths: [
