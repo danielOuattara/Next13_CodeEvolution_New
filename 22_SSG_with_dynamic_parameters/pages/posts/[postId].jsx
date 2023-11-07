@@ -1,8 +1,4 @@
-import React from "react";
-
-import { log } from "console";
-
-export default function SinglePostDetails(props) {
+export default function SinglePostDetails() {
   return (
     <article>
       <h2>{post.title}</h2>
@@ -13,7 +9,7 @@ export default function SinglePostDetails(props) {
 }
 
 export async function getStaticProps(context) {
-  log("context = ", context);
+  console.log("context = ", context);
 
   const postId = context.params.postId;
   const response = await fetch(
