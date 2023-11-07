@@ -5,11 +5,9 @@ export default function ProductsHomePage(props) {
     <ul>
       {props.products.map((product) => (
         <article key={product.id}>
-          {/* <Link href={`/products/${product.id}`}> */}
           <h2>
             {product.id} | {product.title}| {product.price} Rubbles
           </h2>
-          {/* </Link> */}
           <hr />
         </article>
       ))}
