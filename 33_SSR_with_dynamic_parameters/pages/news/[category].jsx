@@ -17,7 +17,7 @@ export default function ArticlesByCategory(props) {
 }
 
 export async function getServerSideProps(context) {
-  console.log(context, context);
+  console.log("context", context);
   const category = context.params.category;
   const response = await fetch(
     `http://localhost:4000/news?category=${category}`,

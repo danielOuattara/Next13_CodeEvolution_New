@@ -2,13 +2,13 @@
   "news": [
     {
       "id": 1,
-      "title": "News from Article 1",
+      "title": "Super News from Article 1",
       "category": "sports",
       "description": "News  from Article 1 description"
     },
     {
       "id": 2,
-      "title": "News from Article 2",
+      "title": " Great News from Article 2",
       "category": "politics",
       "description": "News  from Article 2 description"
     },
