@@ -1,4 +1,5 @@
 export default function NewsHomePage(props) {
+  console.log("props = ", props);
   return (
     <>
       <h1>List of News Articles</h1>
@@ -14,7 +15,8 @@ export default function NewsHomePage(props) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(args) {
+  console.log("args = ", args);
   const response = await fetch("http://localhost:4000/news");
   const news = await response.json();
 
