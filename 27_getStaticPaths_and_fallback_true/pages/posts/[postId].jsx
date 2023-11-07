@@ -2,13 +2,11 @@ import React from "react";
 import { useRouter } from "next/router";
 //-----------------
 export default function SinglePostDetails(props) {
-  // console.log("props = ", props);
-
   const router = useRouter();
-  console.log("router = ", router);
+  // console.log("router = ", router);
 
   if (router.isFallback) {
-    return <p>Loading...</p>;
+    return <h1>Loading...</h1>;
   }
 
   return (
@@ -22,16 +20,13 @@ export default function SinglePostDetails(props) {
 
 //-----------------
 export async function getStaticProps(context) {
-  // log("context = ", context);
-
   const postId = context.params.postId;
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${postId}`,
   );
   const singlePost = await response.json();
-  console.log(singlePost);
-
   console.log(`Generating page for : /post/${context.params.postId}`);
+  console.log("singlePost = ", singlePost);
 
   if (!singlePost.id) {
     return {
@@ -48,11 +43,11 @@ export async function getStaticProps(context) {
 
 //-----------------
 export async function getStaticPaths() {
-  const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-  const posts = await response.json();
-  const postPaths = posts.map((post) => ({
-    params: { postId: `${post.id}` },
-  }));
+  // const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  // const posts = await response.json();
+  // const postPaths = posts.map((post) => ({
+  //   params: { postId: `${post.id}` },
+  // }));
 
   return {
     paths: [
